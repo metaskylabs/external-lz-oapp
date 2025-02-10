@@ -1,0 +1,34 @@
+forge build
+npx hardhat lz:deploy    
+npx hardhat lz:oapp:config:init --contract-name LzAdapter --oapp-config fuji_amoy_adapter.layerzero.config.ts
+npx hardhat lz:oapp:wire --oapp-config fuji_amoy_adapter.layerzero.config.ts
+
+// https://thirdweb.com/avalanche-fuji/0x5A6EDccF6931Fe43921f1F91d5Da25F228fbEb00/explorer?selector=0x18160ddd
+// Fuji Adapter: 0x0a7e52B4c4d65E2A5ee1fc578eA6D37aF079F8Dc
+// https://thirdweb.com/polygon-amoy-testnet/0xaec336120645E81A61beE6760F308bbE03638F2C/explorer?selector=0x18160ddd
+// Amoy Adapter: 0x64795909D50d969bD591070A6A48711633D7f027
+
+Implies: npx hardhat lz:oft:send --to DEST_CHAIN_CONTRACT_ADDRESS --to-eid DESI_CHAIN_EID --amount AMOUNT OF TOKENS --network SOURCE_NETWORK_IN_HARDHAT
+
+=====
+
+
+With ICM
+
+Fuji Token: 0xD9b25c5D653857767d7594C0bc29Ab70D045e517
+Amoy Token: 0x210dde677781bddbb67a32b5e03dd80339a03ab5
+
+Fuji BurnableMintable: https://thirdweb.com/avalanche-fuji/0xad686022817ce32c1dd75068e71dbafb502638c0
+Amoy BurnableMintable: https://thirdweb.com/polygon-amoy-testnet/0x3da6238eb2878085c87471e3806188ddc750b6a7
+
+Fuji Adapter: 0xa296DDe62f7bcd013cD8df8d3cB088F2B501F7A9
+Amoy Adapter: 0xd0aa73b7fbFFb4167180DE9737FC3479Ff40ed38
+
+npx hardhat lz:oapp:config:init --contract-name LzBurnMintAdapter --oapp-config fuji_amoy_mintburn_adapter_icct.layerzero.config.ts
+npx hardhat lz:oapp:wire --oapp-config fuji_amoy_mintburn_adapter_icct.layerzero.config.ts
+npx hardhat lz:oft:send --to 0xFe7528b04DE8B10a9E50FA92CDD0d87d31c0b1e6 --to-eid 40267 --amount 0.001 --network avalanche-testnet
+npx hardhat lz:oft:send --to 0xFe7528b04DE8B10a9E50FA92CDD0d87d31c0b1e6 --to-eid 40106 --amount 0.001 --network amoy-testnet
+
+
+Fuji to Amoy: https://testnet.layerzeroscan.com/tx/0xed580dd7c7b728646e650013f951ab3bd74aff1ebd46b42ac8cc94ea6a82fe9a
+Amoy to Fuji: https://testnet.layerzeroscan.com/tx/0xaffd367fc659fd5579275fdd873fee4e623779807bca7e09207309542ebb09b9
