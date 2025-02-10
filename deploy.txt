@@ -1,0 +1,12 @@
+1. forge build
+
+2. Change TOKEN_CONTRACT and BURNER_MINTER_CONTRACT addresses for the specific chain
+    npx hardhat lz:deploy    
+
+3. npx hardhat lz:oapp:config:init --contract-name LzBurnMintAdapter --oapp-config fuji_amoy_adapter.layerzero.config.ts
+
+4. npx hardhat lz:oapp:wire --oapp-config fuji_amoy_adapter.layerzero.config.ts
+
+5. Send tokens across chains
+    npx hardhat lz:oft:send --to DEST_CHAIN_CONTRACT_ADDRESS --to-eid DESI_CHAIN_EID --amount AMOUNT OF TOKENS --network SOURCE_NETWORK_IN_HARDHAT
+    npx hardhat lz:oft:send --to 0xFe7528b04DE8B10a9E50FA92CDD0d87d31c0b1e6 --to-eid 40267 --amount 0.001 --network avalanche-testnet

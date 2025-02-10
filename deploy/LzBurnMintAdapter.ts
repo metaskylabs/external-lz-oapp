@@ -3,6 +3,8 @@ import assert from 'assert'
 import { type DeployFunction } from 'hardhat-deploy/types'
 
 const contractName = 'LzBurnMintAdapter'
+const TOKEN_CONTRACT = "0x210dde677781bddbb67a32b5e03dd80339a03ab5";
+const BURNER_MINTER_CONTRACT = "0x3da6238eb2878085c87471e3806188ddc750b6a7";
 
 const deploy: DeployFunction = async (hre) => {
     const { getNamedAccounts, deployments, ...rest } = hre
@@ -36,8 +38,8 @@ const deploy: DeployFunction = async (hre) => {
     const { address } = await deploy(contractName, {
         from: deployer,
         args: [
-            "0x210dde677781bddbb67a32b5e03dd80339a03ab5",
-            "0x3da6238eb2878085c87471e3806188ddc750b6a7",
+            TOKEN_CONTRACT,
+            BURNER_MINTER_CONTRACT,
             endpointV2Deployment.address, // LayerZero's EndpointV2 address
             deployer, // owner
         ],
