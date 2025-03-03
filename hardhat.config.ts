@@ -53,11 +53,11 @@ const config: HardhatUserConfig = {
         ],
     },
     networks: {
-        // 'sepolia-testnet': {
-        //     eid: EndpointId.SEPOLIA_V2_TESTNET,
-        //     url: process.env.RPC_URL_SEPOLIA || 'https://rpc.sepolia.org/',
-        //     accounts,
-        // },
+        sepolia: {
+            eid: EndpointId.SEPOLIA_V2_TESTNET,
+            url: process.env.RPC_URL_SEPOLIA || 'https://eth-sepolia.public.blastapi.io',
+            accounts,
+        },
         'avalanche-testnet': {
             eid: EndpointId.AVALANCHE_V2_TESTNET,
             url: process.env.RPC_URL_FUJI || 'https://api.avax-test.network/ext/bc/C/rpc',

@@ -32,3 +32,7 @@ npx hardhat lz:oft:send --to 0xFe7528b04DE8B10a9E50FA92CDD0d87d31c0b1e6 --to-eid
 
 Fuji to Amoy: https://testnet.layerzeroscan.com/tx/0xed580dd7c7b728646e650013f951ab3bd74aff1ebd46b42ac8cc94ea6a82fe9a
 Amoy to Fuji: https://testnet.layerzeroscan.com/tx/0xaffd367fc659fd5579275fdd873fee4e623779807bca7e09207309542ebb09b9
+
+
+npx hardhat lz:oft:send --to 0xFe7528b04DE8B10a9E50FA92CDD0d87d31c0b1e6 --to-eid 40161 --amount 0.001 --network avalanche-testnet
+npx hardhat lz:oft:send --to 0xFe7528b04DE8B10a9E50FA92CDD0d87d31c0b1e6 --to-eid 40106 --amount 0.001 --network sepolia
